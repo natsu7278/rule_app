@@ -23,19 +23,6 @@
                 required
               ></v-select>
               <br />
-              <v-select
-                v-model="course"
-                :hint="`${select.course}`"
-                :items="courses"
-                item-text="course"
-                label="course"
-                persistent-hint
-                return-object
-                single-line
-                :rules="rules"
-                required
-              ></v-select>
-              <br />
               <v-text-field label="tel" v-model="tel" :rules="rules" required>
               </v-text-field>
               <br />
@@ -72,6 +59,10 @@
                 "
                 >新規作成</v-btn
               >
+              <br />
+
+              <p style="white-space: pre-wrap"></p>
+              <v-btn @click="open" to="/" color="secondary">戻る</v-btn>
               <br />
             </v-form>
           </v-col>
@@ -114,21 +105,6 @@ export default {
       //セレクトボックス値
       select: { course: "例)機械創造工学課程", grade: "例)B4" },
 
-      courses: [
-        { course: "機械創造工学課程" },
-        { course: "電気電子情報工学課程" },
-        { course: "物質材料工学課程" },
-        { course: "環境社会基盤工学課程" },
-        { course: "生物機能工学課程" },
-        { course: "情報・経営システム工学課程" },
-        { course: "機械創造工学専攻" },
-        { course: "電気電子情報工学専攻" },
-        { course: "物質材料工学専攻" },
-        { course: "環境社会基盤工学専攻" },
-        { course: "生物機能工学専攻" },
-        { course: "情報・経営システム工学専攻" },
-        { course: "原子力,システム安全,技ノベ,その他" },
-      ],
       grades: [
         { grade: "B1" },
         { grade: "B2" },
